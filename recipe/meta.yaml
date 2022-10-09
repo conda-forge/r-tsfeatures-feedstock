@@ -1,4 +1,4 @@
-{% set version = '1.0.2' %}
+{% set version = "1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,10 +10,10 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tsfeatures_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tsfeatures/tsfeatures_{{ version }}.tar.gz
-  sha256: 6d86810ae1e196769473bbf661ccbc6c908813ce08d9d86e366fa5d6deb927fe
+  sha256: 46aab43be1b3c179edb8abe162e6d0e076dbc268986a0845aae2d45cd22a6319
 
 build:
-  merge_build_host: True  # [win]
+  merge_build_host: true  # [win]
   number: 0
   noarch: generic
   rpaths:
@@ -54,15 +54,11 @@ test:
 about:
   home: https://pkg.robjhyndman.com/tsfeatures/
   license: GPL-3
-  summary: Methods for extracting various features from time series data. The features provided
-    are those from Hyndman, Wang and Laptev (2013) <doi:10.1109/ICDMW.2015.104>, Kang,
-    Hyndman and Smith-Miles (2017) <doi:10.1016/j.ijforecast.2016.09.004> and from Fulcher,
-    Little and Jones (2013) <doi:10.1098/rsif.2013.0048>. Features include spectral
-    entropy, autocorrelations, measures of the strength of seasonality and trend, and
-    so on. Users can also define their own feature functions.
+  summary: Methods for extracting various features from time series data. The features provided are those from Hyndman, Wang and Laptev (2013) <doi:10.1109/ICDMW.2015.104>, Kang, Hyndman and Smith-Miles (2017) <doi:10.1016/j.ijforecast.2016.09.004> and from Fulcher, Little and Jones (2013) <doi:10.1098/rsif.2013.0048>. Features
+    include spectral entropy, autocorrelations, measures of the strength of seasonality and trend, and so on. Users can also define their own feature functions.
   license_family: GPL3
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
