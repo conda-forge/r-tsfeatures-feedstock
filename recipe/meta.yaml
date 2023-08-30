@@ -1,4 +1,4 @@
-{% set version = "1.1" %}
+{% set version = "1.1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/tsfeatures_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/tsfeatures/tsfeatures_{{ version }}.tar.gz
-  sha256: 46aab43be1b3c179edb8abe162e6d0e076dbc268986a0845aae2d45cd22a6319
+  sha256: 5eeb239f51552a42900c68895712c1bbcc6a5bb82b5ae33936876b28d80d0cfc
 
 build:
   merge_build_host: true  # [win]
-  number: 2
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
